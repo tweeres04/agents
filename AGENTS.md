@@ -10,6 +10,11 @@ This document provides instructions that apply across all of Tyler's projects.
 - When in doubt, ASK before committing — even if the user's intent seems clear.
 - "Commit this" for one set of changes does NOT grant permission for subsequent commits.
 
+## Time Estimates
+
+- When giving time estimates, provide AI-assisted time estimates, not human-coder estimates
+- Be realistic but account for the speed advantage of AI tooling
+
 ## Formatting Preferences
 
 - **Headlines and titles:** Use sentence case (e.g., "Income just hit?" not "Income Just Hit?")
