@@ -14,6 +14,12 @@ This document provides instructions that apply across all of Tyler's projects.
 - When in doubt, ALWAYS ASK before committing or pushing — even if the user's intent seems clear
 - Building/implementing something is NOT the same as shipping it
 
+**Common mistakes to avoid:**
+- "Yep", "Yes", "Sounds good", or "Do it" are NOT commit/push instructions
+- Approving a plan that mentions committing is NOT permission to commit
+- Approval to make edits is NOT approval to commit those edits
+- If the user's message doesn't literally contain "commit", "push", "ship it", or "deploy", ASK first
+
 ## Time Estimates
 
 - When giving time estimates, provide AI-assisted time estimates, not human-coder estimates
