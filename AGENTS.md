@@ -92,6 +92,46 @@ async function AsyncDataTable() {
 }
 ```
 
+### Prefer Whitespace Over Cards
+
+Use whitespace and typography to create visual separation instead of card borders when:
+
+- Content is simple and homogeneous
+- The page has a linear, top-to-bottom flow
+- There are only a few sections (2-4)
+
+Reserve cards for:
+
+- Grids of clickable items (product cards, blog posts, etc.)
+- Mixing different types of content on the same page
+- Form containers or distinct workspaces
+- Elements that need elevation (modals, popovers, dialogs)
+
+**Example:**
+
+```tsx
+// Good: Whitespace for simple sections
+<div className="space-y-10">
+  <div>
+    <h2 className="text-xl font-semibold mb-4">Section One</h2>
+    <p>Content...</p>
+  </div>
+  <div>
+    <h2 className="text-xl font-semibold mb-4">Section Two</h2>
+    <p>Content...</p>
+  </div>
+</div>
+
+// Use cards when: grid of interactive items
+<div className="grid grid-cols-3 gap-4">
+  {items.map(item => (
+    <Card key={item.id} className="cursor-pointer hover:shadow-lg">
+      <CardHeader>...</CardHeader>
+    </Card>
+  ))}
+</div>
+```
+
 ## When to Reference Other Documents
 
 Use these specialized guidelines based on what you're working on:
