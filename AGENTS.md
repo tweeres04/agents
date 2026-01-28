@@ -34,12 +34,15 @@ When writing user-facing text (help dialogs, tooltips, error messages, onboardin
 - **Use concrete examples:** Instead of abstract explanations, show real examples (e.g., "75% means it filled up on 3 out of 4 similar days")
 - **Question-based titles:** Use natural questions as dialog titles (e.g., "What does Full % mean?" instead of "Full percentage explained")
 - **Keep it casual:** Don't be overly formal or academic
+- **Avoid em dashes:** They look too much like AI generated copy
 
 **Example of good UI copy:**
+
 - Title: "How is risk calculated?"
 - Body: "We look at how often the sailing fills up. High means it fills more than half the time (>50%). Moderate is 20-50%. Low is less than 20%."
 
 **Example of what to avoid:**
+
 - Title: "Risk level calculation methodology"
 - Body: "Risk assessment is derived from historical capacity metrics utilizing a statistical threshold-based classification system."
 
@@ -50,6 +53,7 @@ When writing user-facing text (help dialogs, tooltips, error messages, onboardin
 Before creating a new component, search for existing components that do similar things. Prefer extending or reusing existing components over duplicating code.
 
 **How to check:**
+
 - Search the codebase for similar functionality
 - Look in common component directories (`src/components/`, `components/ui/`)
 - If unsure, ask the user if a similar component exists
@@ -59,6 +63,7 @@ Before creating a new component, search for existing components that do similar 
 When the project uses shadcn/ui (or similar component libraries), prefer using those components over custom Tailwind classes. Check `src/components/ui/` for available components before writing custom markup.
 
 **Common shadcn components to check for:**
+
 - Button, Card, Table, Badge, Dialog, Breadcrumb
 - If a component doesn't exist but would be useful, consider installing it via `npx shadcn@latest add [component]`
 
@@ -67,16 +72,17 @@ When the project uses shadcn/ui (or similar component libraries), prefer using t
 When a Server Component fetches data, wrap it in `<Suspense>` with a skeleton so the page loads instantly. The parent should own the Suspense boundary, not the async component itself.
 
 **Pattern:**
+
 ```tsx
 // Parent component
 <Suspense fallback={<TableSkeleton />}>
   <AsyncDataTable />
-</Suspense>
+</Suspense>;
 
 // Async component (just fetches and displays)
 async function AsyncDataTable() {
-  const data = await fetchData()
-  return <Table data={data} />
+  const data = await fetchData();
+  return <Table data={data} />;
 }
 ```
 
