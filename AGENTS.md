@@ -20,6 +20,12 @@ This document provides instructions that apply across all of Tyler's projects.
 - Approval to make edits is NOT approval to commit those edits
 - If the user's message doesn't literally contain "commit", "push", "ship it", or "deploy", ASK first
 
+**Sequential commits require separate permission:**
+- Permission to commit/push applies ONLY to the current set of changes
+- After completing follow-up work (e.g., addressing PR feedback), STOP and let the user review
+- Never chain commits without stopping for review between each one
+- Example: User says "commit and push" → you commit → you make more changes → STOP and ask before committing again
+
 ## Time Estimates
 
 - When giving time estimates, provide AI-assisted time estimates, not human-coder estimates
@@ -29,6 +35,26 @@ This document provides instructions that apply across all of Tyler's projects.
 
 - **Headlines and titles:** Use sentence case (e.g., "Income just hit?" not "Income Just Hit?")
   - This applies to ad copy, landing page headlines, and marketing content
+
+### Markdown Tables
+
+When outputting markdown tables, pad columns so they're human-readable in plain text:
+
+**Good (padded):**
+```
+| League  | Revenue       | Teams |
+|---------|---------------|-------|
+| NFL     | $16.9 billion | 32    |
+| MLB     | $10.9 billion | 30    |
+```
+
+**Avoid (unpadded):**
+```
+| League | Revenue | Teams |
+|---|---|---|
+| NFL | $16.9 billion | 32 |
+| MLB | $10.9 billion | 30 |
+```
 
 ## Writing Style for UI Copy
 
@@ -53,6 +79,17 @@ When writing user-facing text (help dialogs, tooltips, error messages, onboardin
 - Body: "Risk assessment is derived from historical capacity metrics utilizing a statistical threshold-based classification system."
 
 ## Code Quality & Best Practices
+
+### Start with Minimal Scope
+
+When planning new features or tests, start with the smallest useful scope. Get one thing working end-to-end before expanding. Ask the user about scope if the task could be interpreted broadly.
+
+**Examples:**
+- Building a test suite? Start with one test that validates the core flow
+- Adding a feature? Implement the happy path first, edge cases later
+- Refactoring? Pick one module to prove the approach before touching everything
+
+This avoids over-engineering and ensures we're building what's actually needed.
 
 ### Reuse Existing Components
 
